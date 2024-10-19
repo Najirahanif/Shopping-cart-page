@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proveway</title>
+    <link href="./style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="line-container">
+        <div class="line"></div>
+        <div class="page-name">YAY! It's BOGO</div>
+        <div class="line"></div>
+    </div>
+
+    <!-- First Unit -->
+    <div class="product-container product-container-1" style="display: flex; flex-wrap: wrap; cursor: pointer;">
+        <div class="row-content" style="display: flex; flex: 1 1 100%; align-items: center;">
+            <div class="radio-content">
+                <input type="radio" name="product-option" checked>
+            </div>
+            <div class="product-details">
+                <div class="detail-header">
+                    <strong>1 Unit</strong>
+                    <span class="discount-box">10% Off</span>
+                </div>
+                <div class="detail-subtext">Standard Price</div>
+            </div>
+            <div class="price-details">
+                <div class="current-price">$10.00 USD</div>
+                <div class="original-price">$24.00 USD</div>
+            </div>
+        </div>
+        <div class="dynamic-options-container"></div> <!-- Placeholder for dynamic row -->
+    </div>
+
+    <!-- Second Unit -->
+    <div class="product-container product-container-2" style="display: flex; flex-wrap: wrap; cursor: pointer;">
+        <div class="most-popular-badge">MOST POPULAR</div>
+        <div class="row-content" style="display: flex; flex: 1 1 100%; align-items: center;">
+            <div class="radio-content">
+                <input type="radio" name="product-option">
+            </div>
+            <div class="product-details">
+                <div class="detail-header">
+                    <strong>2 Unit</strong>
+                    <span class="discount-box">20% Off</span>
+                </div>
+            </div>
+            <div class="price-details">
+                <div class="current-price">$18.00 USD</div>
+                <div class="original-price">$24.00 USD</div>
+            </div>
+        </div>
+        <div class="dynamic-options-container"></div> <!-- Placeholder for dynamic row -->
+    </div>
+
+    <!-- Third Unit -->
+    <div class="product-container product-container-3" style="display: flex; flex-wrap: wrap; cursor: pointer;">
+        <div class="row-content" style="display: flex; flex: 1 1 100%; align-items: center;">
+            <div class="radio-content">
+                <input type="radio" name="product-option">
+            </div>
+            <div class="product-details">
+                <div class="detail-header">
+                    <strong>3 Unit</strong>
+                    <span class="discount-box">30% Off</span>
+                </div>
+            </div>
+            <div class="price-details">
+                <div class="current-price">$24.00 USD</div>
+                <div class="original-price">$24.00 USD</div>
+            </div>
+        </div>
+        <div class="dynamic-options-container"></div> <!-- Placeholder for dynamic row -->
+    </div>
+
+    <div class="delivery-info">
+        <div class="free-delivery">Free Delivery</div>
+        <div class="total-price">Total: $18.00 USD</div>
+    </div>
+
+    <!-- Add to Cart Button -->
+    <button class="add-to-cart-button">+ Add to the Cart</button>
+
+    <!-- Powered By -->
+    <div class="powered-by">© Powered by Pumper</div>
+
+</body>
+
+<script>
+    function toggleDynamicOptions(container) {
+        const dynamicOptionsContainer = container.querySelector('.dynamic-options-container');
+
+        // Check if the options row is already present
+        if (!dynamicOptionsContainer.innerHTML.trim()) {
+            // If the row doesn't exist, create it and append it
+            dynamicOptionsContainer.innerHTML = `
+                <div class="new-row">
+                    <div class="options-wrapper">
+                        <div class="option-container">
+                            <label class="option-label">Size</label>
+                            <div class="option-box">
+                                <span class="option-number">#1</span>
+                                <select class="option-select" name="size-option-1">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                </select>
+                            </div>
+                            <div class="option-box">
+                                <span class="option-number">#2</span>
+                                <select class="option-select" name="size-option-2">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="option-container">
+                            <label class="option-label">Colour</label>
+                            <div class="option-box">
+                                <select class="option-select" name="color-option-1">
+                                    <option value="Black">Black</option>
+                                    <option value="Red">Red</option>
+                                    <option value="Blue">Blue</option>
+                                </select>
+                            </div>
+                            <div class="option-box">
+                                <select class="option-select" name="color-option-2">
+                                    <option value="Black">Color</option>
+                                    <option value="Red">Red</option>
+                                    <option value="Blue">Blue</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            // Add selected class to apply styles
+            container.classList.add('selected');
+        } else {
+            // If the row already exists, remove it
+            dynamicOptionsContainer.innerHTML = '';
+            // Remove selected class
+            container.classList.remove('selected');
+        }
+    }
+
+    // Add event listeners for each product container
+    document.querySelector('.product-container-1').addEventListener('click', function() {
+        toggleDynamicOptions(this);
+    });
+
+    document.querySelector('.product-container-2').addEventListener('click', function() {
+        toggleDynamicOptions(this);
+    });
+
+    document.querySelector('.product-container-3').addEventListener('click', function() {
+        toggleDynamicOptions(this);
+    });
+</script>
+
+
+</html>

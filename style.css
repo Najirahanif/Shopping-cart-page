@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+}
+
+/* Line Container */
+.line-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 1000px;
+    margin: 10px auto 0;
+}
+
+.line {
+    flex-grow: 1;
+    height: 2px;
+    background-color: rgb(173, 171, 171);
+}
+
+.page-name {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fa4b77;
+    white-space: nowrap;
+    padding: 0 10px;
+}
+
+/* Product Containers */
+.product-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1000px;
+    padding: 30px;
+    margin: 20px auto;
+    border: 2px solid rgb(173, 171, 171);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    position: relative;
+}
+
+.product-container-1,
+.product-container-2,
+.product-container-3 {
+    background-color: white;
+}
+
+.new-row {
+    margin-top: 10px;
+    font-size: 1.2rem; 
+    font-weight: bold; 
+    color: #fa4b77; 
+}
+
+.product-container.selected {
+    background-color: #fff5f5;
+    border: 2px solid #fa4b77; 
+}
+
+.product-container-3 .discount-box { 
+    margin-top: -20px; 
+}
+
+.most-popular-badge {
+    position: absolute;
+    top: -15px;
+    right: 10px; 
+    background-color: #ee5c81; 
+    color: white;
+    padding: 8px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+.radio-content {
+    margin-right: 20px;
+}
+
+input[type="radio"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgb(173, 171, 171);
+    border-radius: 50%;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+input[type="radio"]::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #fa4b77; 
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+.product-container-2 input[type="radio"]::before,
+.product-container-3 input[type="radio"]::before {
+    background-color: transparent; 
+}
+
+/* Product Details */
+.product-details {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.detail-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.discount-box {
+    background-color: #fa4b77;
+    color: white;
+    padding: 5px 10px;
+    margin-left: 10px;
+    border-radius: 4px;
+}
+
+.detail-subtext {
+    font-size: 17px;
+    font-weight: normal;
+}
+
+/* Price Details */
+.price-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: -50px;
+}
+
+.current-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: black; 
+}
+
+.original-price {
+    font-size: 14px;
+    text-decoration: line-through;
+    color: rgb(173, 171, 171);
+}
+
+/* Delivery Info */
+.delivery-info {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto; 
+}
+
+.free-delivery {
+    color: #f57e9c; 
+    font-weight: bold;
+}
+
+.total-price {
+    color: black;
+    font-weight: bold;
+}
+
+/* Add to Cart Button */
+.add-to-cart-button {
+    background-color: #fa4b77; 
+    color: white; 
+    border: none;
+    border-radius: 4px; 
+    padding: 10px; 
+    font-size: 16px;
+    font-weight: bold; 
+    cursor: pointer;
+    margin: 20px auto; 
+    display: block; 
+    width: 100%;
+    max-width: 1000px; 
+}
+
+/* Optional: Hover effect for the button */
+.add-to-cart-button:hover {
+    background-color: #ee5c81;
+}
+
+.powered-by {
+    color: grey; 
+    font-size: 14px; 
+    text-align: right;
+    margin: 17px auto; 
+    width: 90%; 
+    max-width: 1000px; 
+    display: flex; 
+    justify-content: flex-end;
+    font-style: italic;
+}
+
+.options-wrapper {
+    padding: 20px 50px 0px 50px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px; 
+}
+
+.option-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Position label on top of the select boxes */
+.option-label {
+    color: black;
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-family: Arial, sans-serif;
+}
+
+/* Move only the Size label to the right by 25px */
+.option-container:first-of-type .option-label {
+    margin-left: 25px;
+}
+
+.option-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.option-number {
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 5px;
+    color: black;
+}
+
+/* Styles for the select boxes */
+.option-select {
+    width: 100px;
+    height: 30px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    border: 2px solid lightgrey;
+    border-radius: 5px;
+}
+
+/* Ensure only the first column has option numbers (#1, #2) */
+.option-container:first-of-type .option-number {
+    display: inline-block;
+}
+
+.option-container:nth-of-type(2) .option-number {
+    display: none;
+}
+
+/* Option ends */
+.new-row {
+    flex-basis: 100%;
+}
